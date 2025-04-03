@@ -11,21 +11,22 @@ namespace ProjetoTesteB3.Pages
 {
     public class PageTricentis : Actions
     {
-        private readonly Actions _action;
-
+        private readonly PageElements elements;
         public PageTricentis(IWebDriver webDriver) : base(webDriver)
         {
-            _action = new Actions(webDriver);
+            elements = new PageElements();
         }
 
-        public void abrirPaginaTricentis()
+        public void AbrirPaginaTricentis()
         {
-            _action.openPage("https://sampleapp.tricentis.com/101/app.php");
+            _webDriver.Navigate().GoToUrl("https://sampleapp.tricentis.com/101/app.php");
         }
 
-        public void validaJanela()
+        public void ValidaJanela()
         {
-            _action.inputActionIn(By.Id("entervehicledata")).Click();
+            InputActionIn(elements.id_entervehicledata).Click();
+            SelectOption(elements.id_make);
+
         }
 
 
