@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
 namespace ProjetoTesteB3.Pages
 {
@@ -18,13 +13,14 @@ namespace ProjetoTesteB3.Pages
         public By id_backmain = By.Id("backmain");
         public By id_birthdate = By.Id("birthdate");
         public By id_branding = By.Id("branding");
-        public By id_bungeejumping = By.Id("bungeejumping");
+        public By id_bungeejumping = By.XPath("//*/label[contains(.,' Bungee Jumping')]");
         public By id_city = By.Id("city");
         public By id_cliffdiving = By.Id("cliffdiving");
         public By id_confirmpassword = By.Id("confirmpassword");
         public By id_country = By.Id("country");
         public By id_courtesycar = By.Id("courtesycar");
         public By id_cylindercapacity = By.Id("cylindercapacity");
+        public By id_cylindercapacityText = By.XPath("//*[@id=\"insurance-form\"]/div/section[1]/div[3]/label");
         public By id_damageinsurance = By.Id("damageinsurance");
         public By id_dateofmanufacture = By.Id("dateofmanufacture");
         public By id_downloadquote = By.Id("downloadquote");
@@ -90,7 +86,7 @@ namespace ProjetoTesteB3.Pages
         public By id_quote_sub_container = By.Id("quote_sub_container");
         public By id_quotetype = By.Id("quotetype");
         public By id_righthanddriveno = By.Id("righthanddriveno");
-        public By id_righthanddriveyes = By.Id("righthanddriveyes");
+        public By id_righthanddriveyes = By.XPath("//*[@id=\"insurance-form\"]/div/section[1]/div[7]/p/label[1]");
         public By id_search_button = By.Id("search_button");
         public By id_search_form = By.Id("search_form");
         public By id_selectedinsurance = By.Id("selectedinsurance");
@@ -107,8 +103,8 @@ namespace ProjetoTesteB3.Pages
         public By id_sendemail = By.Id("sendemail");
         public By id_sendquote = By.Id("sendquote");
         public By id_site_content = By.Id("site_content");
-        public By id_skydiving = By.Id("skydiving");
-        public By id_speeding = By.Id("speeding");
+        public By id_skydiving = By.XPath("//*/label[contains(.,' Skydiving')]");
+        public By id_speeding = By.XPath("//*/label[contains(.,' Speeding')]");
         public By id_startdate = By.Id("startdate");
         public By id_streetaddress = By.Id("streetaddress");
         public By id_totalweight = By.Id("totalweight");
