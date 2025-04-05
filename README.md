@@ -25,6 +25,7 @@ ProjetoTesteB3/
 │
 ├── Common/               # Classes auxiliares, WebDriver e Bootstrap
 ├── Pages/                # Objetos de Página (Page Object Model)
+├── Data/                 # Arquivos auxiliares
 ├── Capturas/             # Captura de telas durante os testes
 └── README.md             # Documentação do projeto
 ```
