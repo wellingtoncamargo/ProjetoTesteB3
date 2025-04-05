@@ -15,9 +15,9 @@ namespace ProjetoTesteB3
         [SetUp]
         public void Setup()
         {
-            //var opcoes = new ChromeOptions();
-            //opcoes.AddArguments("--Headless");
-            _driver = new ChromeDriver();
+            var opcoes = new ChromeOptions();
+            opcoes.AddArguments("--Headless");
+            _driver = new ChromeDriver(opcoes);
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
             _driver.Manage().Window.Size = new System.Drawing.Size(1920, 1920);
             _pageFormDadosVeiculo = new FormDadosVeiculo(_driver);
@@ -45,7 +45,6 @@ namespace ProjetoTesteB3
             _pageFormDadosVeiculo.ListaPreco();
             _pageFormDadosVeiculo.NumeroLicenciamento();
             _pageFormDadosVeiculo.QuilometragemAnual();
-            Thread.Sleep(10000);
             _pageFormDadosVeiculo.ClicaBotaoNextDadosVeiculo();
         }
 
@@ -69,7 +68,6 @@ namespace ProjetoTesteB3
             _pageFormDadosSegurador.SelecionaHobbies();
             _pageFormDadosSegurador.PreencherWebSite();
             _pageFormDadosSegurador.InformarArquivo();
-            Thread.Sleep(10000);
             _pageFormDadosSegurador.ClicaBotaoNextDadosSegurador();
         }
 
