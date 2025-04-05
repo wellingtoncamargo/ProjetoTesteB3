@@ -35,7 +35,7 @@ namespace ProjetoTesteB3.Pages
         public By id_firstname = By.Id("firstname");
         public By id_fuel = By.Id("fuel");
         public By id_genderfemale = By.Id("genderfemale");
-        public By id_gendermale = By.Id("gendermale");
+        public By id_gendermale = By.XPath("//*/label[contains(.,'Male')]");
         public By id_idealsteps_nav = By.Id("idealsteps_nav");
         public By id_insurance_form = By.Id("insurance_form");
         public By id_insurancesum = By.Id("insurancesum");

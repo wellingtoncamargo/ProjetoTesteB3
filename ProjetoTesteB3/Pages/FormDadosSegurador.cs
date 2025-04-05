@@ -37,6 +37,31 @@ namespace ProjetoTesteB3.Pages
             RealizeEm(elements.id_birthdate).SendKeys(GeradorData(data.Year - 18, data.Year - 60));
         }
 
+        public void Genero()
+        {
+            RealizeEm(elements.id_gendermale).Click();
+        }
+
+        public void NomeRua()
+        {
+            RealizeEm(elements.id_streetaddress).SendKeys(Faker.Address.StreetName());
+        }
+
+        public void Pais()
+        {
+            SelecionaOpcao(elements.id_country);
+        }
+
+        public void CEP()
+        {
+            RealizeEm(elements.id_zipcode).SendKeys(Faker.RandomNumber.Next(1000,99999999).ToString().PadLeft(8));
+        }
+
+        public void Cidade()
+        {
+            RealizeEm(elements.id_city).SendKeys(Faker.Address.City());
+        }
+
         public void SelecionaOcupacao()
         {
             SelecionaOpcao(elements.id_occupation);
@@ -56,12 +81,18 @@ namespace ProjetoTesteB3.Pages
             RealizeEm(elements.id_website).SendKeys("https://storage.googleapis.com/novo-blog-wordpress/2023/07/c34a5169-como-ler-imagens-1024x464.jpg");
         }
 
+        public void InformarArquivo()
+        {
+            string arquivo = Path.GetFullPath("../../../Data/imagemTeste.jpg");
+            RealizeEm(elements.id_picturecontainer).SendKeys(arquivo);
+        }
+
         public void ClicaBotaoNextDadosSegurador()
         {
-            IWebElement footer = RealizeEm(elements.id_nextenterproductdata);
-            RolarPagina(footer);
+            IWebElement botao = RealizeEm(elements.id_nextenterproductdata);
+            RolarPagina(botao);
             CapturaTela($"nextenterproductdata_scrollPage");
-            footer.Click();
+            botao.Click();
             var proximaTela = RealizeEm(elements.id_nextselectpriceoption);
             CapturaTela($"nextselectpriceoption");
         }
